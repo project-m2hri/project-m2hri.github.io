@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> A Vision-Language Framework for Hierarchical Multi-Agent Collaboration</title>
+  <title> VECTOR: Decentralized Task Planning with Verification and Adaptive Execution for Multi-Robot Systems</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -247,7 +247,7 @@
 <section class="hero">
   <div class="hero-body">
     <div class="content-wrap has-text-centered">
-      <h1 class="title">PRISM: A Vision-Language Framework for Hierarchical Multi-Agent Collaboration</h1>
+      <h1 class="title">VECTOR: Decentralized Task Planning with Verification and Adaptive Execution for Multi-Robot Systems</h1>
 
       <div style="margin-top: 10px;">
         <a href="https://github.com/prism-architecture/PRISM" class="button is-dark is-rounded">
@@ -278,22 +278,9 @@
   <div class="content-wrap">
     <h2 class="section-title">Abstract</h2>
     <div class="content has-text-justified">
-      <p>
-        Multi-agent systems hold the promise of distributed, parallel execution in domains ranging from
-        manufacturing to assistive care. However, enabling multiple agents to follow natural language
-        instructions in dynamic environments remains a challenging problem due to the lack of mechanisms
-        for grounding language into temporally synchronized, vision-aware action plans. To overcome these
-        limitations and enable robust coordination among multiple agents, we present a hierarchical
-        vision-language framework that grounds natural language instructions into synchronized multi-agent
-        workflows by dynamically injecting synchronization constraints via predicate reasoning over
-        multimodal observations and execution history. Additionally, to enable systematic evaluation of
-        multi-agent coordination, we introduce CoRL-Bench, an extended benchmark comprising ten two-robot
-        manipulation tasks spanning sequential coordination, parallel coordination, coupled interaction,
-        and behavior-aware reasoning. Our extensive experiments suggest that the proposed method
-        significantly outperforms state-of-the-art planning frameworks, achieving an average task success
-        rate of 72% and an average subtask success rate of 89%. Our comprehensive evaluation demonstrates
-        that PRISM bridges the gap between adaptability and temporal coordination in multi-agent systems.
-      </p>
+        <p>
+        Decentralized multi-robot systems must coordinate robots with heterogeneous capabilities, manage action dependencies, and remain robust to unexpected interruptions, all of which are critical to reliable task completion. However, existing frameworks often overlook robots’ physical and task constraints, execution verification, and coordinated replanning, leaving these challenges largely unaddressed. To address this problem, we propose <b>VECTOR</b>, a decentralized framework that combines constraint-aware peer-to-peer task negotiation, symbolic plan grounding, dependency-based parallel scheduling, and plan verification. Before execution, VECTOR verifies that the combined multi-robot plan will achieve the global task goal. During execution, the system monitors the shared symbolic state and responds to environmental changes through targeted recovery strategies such as motion-level adjustment or decentralized replanning. We evaluate VECTOR on two collaborative tabletop manipulation tasks under four interruption conditions in both simulation and real robot experiments. Our results show that VECTOR achieves an average task success rate of 91%, significantly outperforming existing vision-language planning approaches while maintaining low coordination overhead. These results highlight that combining decentralized coordination with symbolic verification and adaptive execution enables more reliable multi-robot task completion in dynamic environments.
+        </p>
     </div>
   </div>
 </section>
