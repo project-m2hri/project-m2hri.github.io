@@ -1,1 +1,1 @@
-# m2hri-crl.github.io
+# vector-planning.github.io
