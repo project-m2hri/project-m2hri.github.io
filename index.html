@@ -383,88 +383,41 @@
     <div class="content-wrap">
       <h2 class="section-title">Simulation Results</h2>
 
-      <h3 class="subsection-title">Simulation in RLBench</h3>
-      <p class="muted" style="margin-bottom: 0.75rem;">CoRL-Bench task suite used for evaluation.</p>
-      <div class="has-text-centered" style="margin-bottom: 1.25rem;">
-        <img src="./static/images/CoRL-Bench.png" style="max-width: 900px; width: 100%; border-radius: var(--radius-rect);" alt="CoRL-Bench">
-      </div>
 
       <h3 class="subsection-title">Successful Task Execution Examples</h3>
 
-      <div class="sim-slider" id="sim-slider">
-        <button class="sim-arrow left" id="sim-prev" aria-label="Previous">
-          <span class="chev left"></span>
-        </button>
-        <button class="sim-arrow right" id="sim-next" aria-label="Next">
-          <span class="chev right"></span>
-        </button>
+      <p class="section-note">Representative real-robot executions for different tasks.</p>
 
-        <div class="sim-viewport">
-          <div class="sim-track" id="sim-track">
-            <!-- Slide 1 -->
-            <div class="sim-panel">
-              <div class="sim-slide">
-                <div>
-                  <img src="./static/images/stack_block.gif" alt="Stacking blocks">
-                  <div class="sim-cap">Stacking blocks</div>
-                </div>
-                <div>
-                  <img src="./static/images/pyramid_stacking.gif" alt="Stacking a pyramid">
-                  <div class="sim-cap">Stacking a pyramid</div>
-                </div>
-                <div>
-                  <img src="./static/images/put_into_drawer.gif" alt="Putting in the drawer">
-                  <div class="sim-cap">Putting in the drawer</div>
-                </div>
-
-                <div>
-                  <img src="./static/images/put_into_saucepan.gif" alt="Putting on the saucepan">
-                  <div class="sim-cap">Putting on the saucepan</div>
-                </div>
-                <div>
-                  <img src="./static/images/push_buttons.gif" alt="Pushing buttons">
-                  <div class="sim-cap">Pushing buttons</div>
-                </div>
-                <div>
-                  <img src="./static/images/shell_game.gif" alt="The shell game">
-                  <div class="sim-cap">The shell game</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="sim-panel">
-              <div class="sim-slide">
-                <div>
-                  <img src="./static/images/sort_items.gif" alt="Sorting items">
-                  <div class="sim-cap">Sorting items</div>
-                </div>
-                <div>
-                  <img src="./static/images/handover_item.gif" alt="Handing over an item">
-                  <div class="sim-cap">Handing over an item</div>
-                </div>
-                <div>
-                  <img src="./static/images/insert_ring.gif" alt="Inserting rings">
-                  <div class="sim-cap">Inserting rings</div>
-                </div>
-
-                <div>
-                  <img src="./static/images/push_box.gif" alt="Pushing a box to a target">
-                  <div class="sim-cap">Pushing a box to a target</div>
-                </div>
-                <div>
-                  <img src="./static/images/stack_block.gif" alt="Stacking blocks">
-                  <div class="sim-cap">Stacking blocks</div>
-                </div>
-                <div>
-                  <img src="./static/images/pyramid_stacking.gif" alt="Stacking a pyramid">
-                  <div class="sim-cap">Stacking a pyramid</div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="columns is-multiline is-centered is-variable is-4">
+        <div class="column is-one-quarter has-text-centered">
+          <div class="task-cap">Stack the red and yellow blocks on the stacking plane</div>
+          <video autoplay muted loop playsinline controls class="task-video">
+            <source src="./static/videos/stack_blocks.mp4" type="video/mp4">
+          </video>
         </div>
-      </div>
+
+        <div class="column is-one-quarter has-text-centered">
+          <div class="task-cap">Put the red block on the drawer</div>
+          <video autoplay muted loop playsinline controls class="task-video">
+            <source src="./static/videos/open_drawer.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-quarter has-text-centered">
+          <div class="task-cap">Handover the green block to the other robot</div>
+          <video autoplay muted loop playsinline controls class="task-video">
+            <source src="./static/videos/handover_item.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-quarter has-text-centered">
+          <div class="task-cap">Sort the green and yellow blocks on the trays</div>
+          <video autoplay muted loop playsinline controls class="task-video">
+            <source src="./static/videos/sort_items.mp4" type="video/mp4">
+          </video>
+        </div>
+
+
 
       <h3 class="subsection-title">Quantitative Results</h3>
       <p class="section-note">
