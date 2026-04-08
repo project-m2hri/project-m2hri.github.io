@@ -1,73 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M2HRI: Multimodal Multi-Agent Human-Robot Interaction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Nerfies / Bulma CSS -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    :root{
+      --content-max: 1100px;
+      --teaser-max: 90vw;
+      --teaser-gap: 18px;
+      --radius-video-oval: 12px;
+      --radius-rect: 4px;
+    }
+
+    .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .content-wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 1rem; }
+
+    .section-title {
+      text-align: left;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .subsection-title {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .section-note {
+      text-align: left;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .hero { padding: 1.5rem 0; }
+    .hero .title { font-size: 2.2rem; }
+
+    .release-note {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-top: 16px;
+    }
+
+    .task-video {
+      width: 100%;
+      margin-top: 0.55rem;
+      display: block;
+      background: #000;
+      border-radius: var(--radius-video-oval);
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+
 <!-- ================= TITLE ================= -->
 <section class="hero">
   <div class="hero-body">
     <div class="content-wrap has-text-centered">
-      <h1 class="title">VECTOR: Decentralized Task Planning with Verification and Adaptive Execution for Multi-Robot Systems</h1>
+      <h1 class="title">M2HRI: Multimodal Multi-Agent Human-Robot Interaction</h1>
 
       <p class="release-note">
-        <span class="icon"><i class="fas fa-code"></i></span>
-        Code and data will be released upon acceptance.
+        An LLM-Driven Framework for Personalized Multi-Robot Interaction
       </p>
     </div>
   </div>
 </section>
 
-<!-- ================= M2HRI PROJECT ================= -->
+<!-- ================= ABSTRACT ================= -->
 <section class="section">
   <div class="content-wrap">
-
-    <h2 class="section-title">
-      M2HRI: Multimodal Multi-Agent Human-Robot Interaction
-    </h2>
-
-    <p style="font-size: 1.05rem; margin-bottom: 0.5rem;">
-      <b>An LLM-Driven Framework for Personalized Multi-Robot Interaction</b><br>
-      Shaid Hasan, Breenice Lee, Sujan Sarker, Tariq Iqbal <br>
-      University of Virginia
-    </p>
-
-    <p style="margin-bottom: 1rem;">
-      <a href="./M2HRI.pdf">📄 Paper</a> |
-      <a href="https://project-m2hri.github.io/">🌐 Project Page</a> |
-      <span>💻 Code (Coming Soon)</span>
-    </p>
-
-    <h3 class="subsection-title">Overview</h3>
+    <h2 class="section-title">Abstract</h2>
     <div class="content has-text-justified">
       <p>
-        Multi-robot systems are increasingly deployed in social environments, yet most existing approaches treat robots as identical agents. In this work, we introduce <b>M2HRI</b>, a multimodal multi-agent framework that enables:
-      </p>
-
-      <ul>
-        <li>Distinct <b>robot personalities</b></li>
-        <li><b>Long-term memory</b> for personalization</li>
-        <li><b>Multimodal perception</b> (vision + speech)</li>
-        <li><b>Centralized coordination</b> for coherent interaction</li>
-      </ul>
-
-      <p>
-        Our results show that modeling <b>agent individuality + coordination</b> significantly improves interaction quality, engagement, and personalization.
+        Multi-robot systems are increasingly deployed in social environments, yet most existing approaches treat robots as identical agents. In this work, we introduce <b>M2HRI</b>, a multimodal multi-agent framework that enables distinct robot personalities, long-term memory for personalization, multimodal perception (vision and speech), and centralized coordination for coherent interaction. Our approach models agent individuality alongside coordinated behavior, allowing robots to adapt to users and maintain consistent interactions over time. Experimental results demonstrate that incorporating personality, memory, and multimodal perception significantly improves interaction quality, engagement, and personalization in multi-robot systems.
       </p>
     </div>
-
-    <!-- Demo Video -->
-    <h3 class="subsection-title">Demo Video</h3>
-    <div class="has-text-centered">
-      <video controls class="task-video">
-        <source src="./static/videos/Demo_Video_25mb.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="content" style="margin-top: 0.75rem;">
-      <p><b>What this demo shows:</b></p>
-      <ul>
-        <li>Two robots with <b>distinct personalities</b></li>
-        <li>Real-time <b>speech + vision perception</b></li>
-        <li><b>Turn-taking coordination</b></li>
-        <li><b>Embodied interaction</b> (speech, gestures)</li>
-        <li>Human interacting with both agents simultaneously</li>
-      </ul>
-    </div>
-
   </div>
 </section>
+
+<!-- ================= DEMO VIDEO ================= -->
+<section class="section">
+  <div class="content-wrap">
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+        <video autoplay muted loop playsinline controls class="task-video">
+          <source src="./static/videos/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REST UNCHANGED ================= -->
+<!-- KEEP EVERYTHING BELOW EXACTLY AS YOUR ORIGINAL FILE -->
+
+</body>
+</html>
