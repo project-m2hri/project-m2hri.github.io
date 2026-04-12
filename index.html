@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#166534">
   <title>M2HRI: Multimodal Multi-Agent Human-Robot Interaction</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -19,12 +20,29 @@
   <script src="./static/js/index.js"></script>
 
   <style>
-    :root{
+    :root {
+      --green-950: #052e16;
+      --green-900: #14532d;
+      --green-800: #166534;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-500: #22c55e;
+      --green-200: #bbf7d0;
+      --green-100: #dcfce7;
+      --green-50: #f0fdf4;
+      --surface: #f7fcf9;
+      --text-muted: #3f6212;
+
       --content-max: 1100px;
       --teaser-max: 90vw;
       --teaser-gap: 18px;
       --radius-video-oval: 12px;
       --radius-rect: 4px;
+    }
+
+    body {
+      background: var(--surface);
+      color: #1c1917;
     }
 
     .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
@@ -35,6 +53,9 @@
       font-size: 1.75rem;
       font-weight: 800;
       margin-bottom: 0.75rem;
+      color: var(--green-900);
+      border-bottom: 3px solid var(--green-500);
+      padding-bottom: 0.4rem;
     }
 
     .subsection-title {
@@ -42,33 +63,52 @@
       font-size: 1.25rem;
       font-weight: 800;
       margin: 1.25rem 0 0.5rem;
+      color: var(--green-800);
     }
 
     .section-note {
       text-align: left;
-      color: #6b7280;
+      color: var(--text-muted);
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
 
-    .hero { padding: 1.5rem 0; }
-    .hero .title { font-size: 2.2rem; }
+    .hero {
+      padding: 2rem 0 2.25rem;
+      background: linear-gradient(165deg, var(--green-100) 0%, var(--green-50) 45%, var(--surface) 100%);
+      border-bottom: 1px solid var(--green-200);
+    }
+    .hero .title {
+      font-size: 2.2rem;
+      color: var(--green-950);
+    }
 
     .release-note {
       font-size: 1.3rem;
       font-weight: 600;
-      color: #1e3a8a;
+      color: var(--green-800);
       margin-top: 16px;
+    }
+
+    .content b {
+      color: var(--green-800);
     }
 
     .task-video {
       width: 100%;
       margin-top: 0.55rem;
       display: block;
-      background: #000;
+      background: #0a0f0c;
       border-radius: var(--radius-video-oval);
       aspect-ratio: 16 / 9;
       object-fit: contain;
+      box-shadow: 0 8px 28px rgba(22, 101, 52, 0.18);
+      outline: 1px solid var(--green-200);
+    }
+
+    ::selection {
+      background: var(--green-200);
+      color: var(--green-950);
     }
   </style>
 </head>
