@@ -1,0 +1,27 @@
+          {
+            "agents": [
+              {
+                "name": "AGENT_NAME_1",
+                "ip": "192.168.1.xx",
+                "bigo_personality": {
+                  "openness": 3,
+                  "conscientiousness": 3,
+                  "extraversion": 3,
+                  "agreeableness": 3,
+                  "neuroticism": 3
+                }
+              },
+              {
+                  "name": "AGENT_NAME_2",
+                  "ip": "192.168.1.xx",
+                  "bigo_personality": {
+                    "openness": 3,
+                    "conscientiousness": 3,
+                    "extraversion": 3,
+                    "agreeableness": 3,
+                    "neuroticism": 3
+                  }
+              }
+            ]
+          }          
+        

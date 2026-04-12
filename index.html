@@ -270,6 +270,134 @@
       text-align: center;
     }
 
+    .code-showcase {
+      margin-top: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      text-align: left;
+    }
+
+    /* Single column: title row, then full-width code (avoids 0-width grid track bugs). */
+    .code-showcase-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem 0;
+      align-items: start;
+    }
+
+    .code-showcase-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      width: 100%;
+      margin: 0;
+      padding: 0.4rem 0;
+      padding-bottom: 0.45rem;
+      border: none;
+      border-bottom: 3px solid var(--green-500);
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      border-radius: 0;
+      transition: background 0.15s ease;
+    }
+
+    .code-showcase-toggle:hover {
+      background: rgba(220, 252, 231, 0.45);
+    }
+
+    .code-showcase-toggle:focus {
+      outline: 2px solid var(--green-600);
+      outline-offset: 2px;
+    }
+
+    .code-showcase-toggle::after {
+      content: '';
+      flex-shrink: 0;
+      width: 0.45em;
+      height: 0.45em;
+      border-right: 2.5px solid var(--green-700);
+      border-bottom: 2.5px solid var(--green-700);
+      transform: rotate(-45deg);
+      transition: transform 0.25s ease;
+      margin-top: -0.15em;
+    }
+
+    .code-showcase-row.is-expanded .code-showcase-toggle::after {
+      transform: rotate(45deg);
+      margin-top: 0.1em;
+    }
+
+    .code-showcase-label {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--green-900);
+      line-height: 1.35;
+      pointer-events: none;
+    }
+
+    .code-showcase-panel {
+      min-width: 0;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.45s ease, opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .code-showcase-row.is-expanded .code-showcase-panel {
+      max-height: min(10000px, 90vh);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .code-showcase-row.is-expanded .code-showcase-panel .code-showcase-snippet {
+      max-height: min(80vh, 10000px);
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+
+    .code-showcase-snippet {
+      margin: 0;
+      padding: 0.9rem 1.05rem;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      box-shadow: 0 4px 16px rgba(22, 101, 52, 0.12);
+    }
+
+    .code-showcase-snippet code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      background: transparent;
+      color: inherit;
+      white-space: pre;
+      display: block;
+    }
+
+    .code-showcase-note {
+      margin-top: 0.25rem;
+      margin-bottom: 0;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .code-showcase-row.is-expanded .code-showcase-panel .code-showcase-snippet {
+        max-height: min(65vh, 10000px);
+      }
+    }
+
     @media (max-width: 768px) {
       .demo-video-grid {
         grid-template-columns: 1fr;
@@ -351,6 +479,43 @@
       </video>
     </div>
 
+    <h3 class="subsection-title">Code Snippets</h3>
+    <div class="code-showcase">
+      <div class="code-showcase-row">
+        <button type="button" class="code-showcase-toggle" aria-expanded="false" aria-controls="code-showcase-panel-1" id="code-showcase-btn-1">
+          <span class="code-showcase-label">Perception VLM</span>
+        </button>
+        <div class="code-showcase-panel" id="code-showcase-panel-1" role="region" aria-labelledby="code-showcase-btn-1">
+        <pre class="code-showcase-snippet"><code class="code-showcase-load" data-src="./static/code-snippets/perception-vlm.txt"></code></pre>
+        </div>
+      </div>
+      <div class="code-showcase-row">
+        <button type="button" class="code-showcase-toggle" aria-expanded="false" aria-controls="code-showcase-panel-2" id="code-showcase-btn-2">
+          <span class="code-showcase-label">VLM + Autogen powered Turn Manager</span>
+        </button>
+        <div class="code-showcase-panel" id="code-showcase-panel-2" role="region" aria-labelledby="code-showcase-btn-2">
+        <pre class="code-showcase-snippet"><code class="code-showcase-load" data-src="./static/code-snippets/vlm-turn-manager.txt"></code></pre>
+        </div>
+      </div>
+      <div class="code-showcase-row">
+        <button type="button" class="code-showcase-toggle" aria-expanded="false" aria-controls="code-showcase-panel-3" id="code-showcase-btn-3">
+          <span class="code-showcase-label">Langchain PoweredMemory</span>
+        </button>
+        <div class="code-showcase-panel" id="code-showcase-panel-3" role="region" aria-labelledby="code-showcase-btn-3">
+        <pre class="code-showcase-snippet"><code class="code-showcase-load" data-src="./static/code-snippets/langchain-memory.txt"></code></pre>
+        </div>
+      </div>
+      <div class="code-showcase-row">
+        <button type="button" class="code-showcase-toggle" aria-expanded="false" aria-controls="code-showcase-panel-4" id="code-showcase-btn-4">
+          <span class="code-showcase-label">Quick Agent Configuration</span>
+        </button>
+        <div class="code-showcase-panel" id="code-showcase-panel-4" role="region" aria-labelledby="code-showcase-btn-4">
+        <pre class="code-showcase-snippet"><code class="code-showcase-load" data-src="./static/code-snippets/agent-config.txt"></code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="code-showcase-note">*Code has been shortened for readability.</p>
+
     <h3 class="subsection-title">More demos</h3>
     <div class="demo-video-grid">
       <div class="demo-video-cell">
@@ -395,6 +560,53 @@
 
 <!-- ================= REST UNCHANGED ================= -->
 <!-- KEEP EVERYTHING BELOW EXACTLY AS YOUR ORIGINAL FILE -->
+
+<!-- ================= CODE SNIPPETS HELPER/LOAD FUNCTIONS ================= -->
+<script>
+(function () {
+  function bindCodeShowcaseToggles() {
+    document.querySelectorAll('.code-showcase-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var row = btn.closest('.code-showcase-row');
+        if (!row) return;
+        var expanded = row.classList.toggle('is-expanded');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    });
+  }
+
+  function loadCodeSnippets() {
+    document.querySelectorAll('.code-showcase-load').forEach(function (el) {
+      var src = el.getAttribute('data-src');
+      if (!src) return;
+      el.textContent = 'Loading…';
+      fetch(src)
+        .then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.text();
+        })
+        .then(function (text) {
+          el.textContent = text.replace(/\r\n/g, '\n');
+        })
+        .catch(function () {
+          el.textContent =
+            'Could not load snippet. Use a local server (e.g. python -m http.server), not file:// — ' + src;
+        });
+    });
+  }
+
+  function init() {
+    bindCodeShowcaseToggles();
+    loadCodeSnippets();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 
 </body>
 </html>

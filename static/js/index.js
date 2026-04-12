@@ -38,11 +38,13 @@ $(document).ready(function() {
 			autoplaySpeed: 3000,
     }
 
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+    var carousels = [];
+    if (typeof bulmaCarousel !== 'undefined') {
+      carousels = bulmaCarousel.attach('.carousel', options);
+    }
 
     // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
+    for (var i = 0; i < carousels.length; i++) {
     	// Add listener to  event
     	carousels[i].on('before:show', state => {
     		console.log(state);
@@ -57,14 +59,6 @@ $(document).ready(function() {
     		console.log(state);
     	});
     }
-
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
     preloadInterpolationImages();
 
     $('#interpolation-slider').on('input', function(event) {
@@ -73,6 +67,8 @@ $(document).ready(function() {
     setInterpolationImage(0);
     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
-    bulmaSlider.attach();
+    if (typeof bulmaSlider !== 'undefined') {
+      bulmaSlider.attach();
+    }
 
 })
