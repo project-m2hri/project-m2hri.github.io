@@ -385,9 +385,26 @@
       }
     }
 
+    .approach-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 1.1rem;
+    }
+    .approach-table-col { min-width: 0; }
+    .approach-img-col   { min-width: 0; display: flex; justify-content: center; }
+    .approach-img-col .info-module-img-wrap { display: inline-block; }
+
+    @media (max-width: 768px) {
+      .approach-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .info-table {
       border-collapse: collapse;
-      margin: 1.1rem auto 0;
+      margin: 0;
       text-align: left;
     }
 
@@ -708,33 +725,49 @@
       </p>
     </div>
 
-    <!---image.diagram-->
-    <div class="info-module-img-wrap">
-      <img class="info-module-img" src="./static/images/diagram.png" alt="M2HRI diagram">
+    <div class="approach-row">
+      <div class="approach-table-col">
+        <table class="info-table">
+          <tr>
+            <td>Personality</td>
+            <td>Big Five traits injected directly into each agent's reasoning, shaping how it speaks and responds</td>
+          </tr>
+          <tr>
+            <td>Memory</td>
+            <td>Working memory for short-term coherence; semantic and episodic memory for personalization across sessions</td>
+          </tr>
+          <tr>
+            <td>Perception</td>
+            <td>Joint vision + speech processed via VLM, grounding spoken references in the physical scene</td>
+          </tr>
+          <tr>
+            <td>Planning</td>
+            <td>LLM generates sequenced policies of speech, gesture, and movement conditioned on personality and memory</td>
+          </tr>
+        </table>
+      </div>
+      <div class="approach-img-col">
+        <div class="info-module-img-wrap">
+          <img class="info-module-img" src="./static/images/agent_architecture.png" alt="M2HRI diagram">
+        </div>
+      </div>
     </div>
 
-    <table class="info-table">
-      <tr>
-        <td>Personality</td>
-        <td>Big Five traits injected directly into each agent's reasoning, shaping how it speaks and responds</td>
-      </tr>
-      <tr>
-        <td>Memory</td>
-        <td>Working memory for short-term coherence; semantic and episodic memory for personalization across sessions</td>
-      </tr>
-      <tr>
-        <td>Perception</td>
-        <td>Joint vision + speech processed via VLM, grounding spoken references in the physical scene</td>
-      </tr>
-      <tr>
-        <td>Planning</td>
-        <td>LLM generates sequenced policies of speech, gesture, and movement conditioned on personality and memory</td>
-      </tr>
-      <tr>
-        <td>Coordination</td>
-        <td>Centralized LLM scores each agent's suitability to respond — turn-taking as a social decision, not a timing rule</td>
-      </tr>
-    </table>
+    <div class="approach-row">
+      <div class="approach-img-col">
+        <div class="info-module-img-wrap">
+          <img class="info-module-img" src="./static/images/mult_agent_diagram.png" alt="Multi-agent coordination diagram">
+        </div>
+      </div>
+      <div class="approach-table-col">
+        <table class="info-table">
+          <tr>
+            <td>Coordination</td>
+            <td>Centralized LLM scores each agent's suitability to respond — turn-taking as a social decision, not a timing rule</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -762,19 +795,19 @@
           <img class="info-module-img" src="./static/images/personality_results.png" alt="Personality findings">
         </div>
       </div>
-      <div class="info-module image image-left">
-          <span class="info-module-number top-right">2</span>
-          <div class="info-module-img-wrap">
-            <img class="info-module-img" src="./static/images/memory_results.png" alt="Memory findings">
-          </div>
-          <div class="info-module-content">
-            <p class="info-module-title">Memory enables personalization</p>
-            <p class="info-module-text">Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal.</p>
-            <p class="info-module-note">Figure (left): Paired bar charts compare with- and without-condition means (±1 SD)
-              across three measures each. Memory measures: (a) recall accuracy, (b) preference awareness, (c) naturalness. Brackets indicate pairwise significance via paired-sample t-tests
-              with ** p < .01, *** p < .001.
-            </p>
-          </div>
+      <div class="info-module image">
+        <span class="info-module-number top-left">2</span>
+        <div class="info-module-content">
+          <p class="info-module-title">Memory enables personalization</p>
+          <p class="info-module-text">Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal.</p>
+          <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
+            across three measures each. Memory measures: (a) recall accuracy, (b) preference awareness, (c) naturalness. Brackets indicate pairwise significance via paired-sample t-tests
+            with ** p < .01, *** p < .001.
+          </p>
+        </div>
+        <div class="info-module-img-wrap">
+          <img class="info-module-img" src="./static/images/memory_results.png" alt="Memory findings">
+        </div>
       </div>
       <div class="info-module image">
         <span class="info-module-number top-left">3</span>
