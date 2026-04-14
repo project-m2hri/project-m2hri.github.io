@@ -234,8 +234,8 @@
 
     .demo-video-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.1rem 1.25rem;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
       margin-top: 0.5rem;
       text-align: left;
     }
@@ -380,12 +380,6 @@
     @media (max-width: 640px) {
       .code-showcase-row.is-expanded .code-showcase-panel .code-showcase-snippet {
         max-height: min(65vh, 10000px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .demo-video-grid {
-        grid-template-columns: 1fr;
       }
     }
 
