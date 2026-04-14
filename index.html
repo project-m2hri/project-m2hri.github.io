@@ -234,8 +234,8 @@
 
     .demo-video-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.35rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem 1.25rem;
       margin-top: 0.5rem;
       text-align: left;
     }
@@ -383,6 +383,35 @@
       }
     }
 
+    .info-table {
+      border-collapse: collapse;
+      margin: 1.1rem auto 0;
+      text-align: left;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid var(--green-200);
+    }
+
+    .info-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .info-table td {
+      padding: 0.65rem 0.5rem;
+      vertical-align: top;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .info-table td:first-child {
+      font-weight: 700;
+      color: var(--green-900);
+      white-space: nowrap;
+      padding-right: 1.5rem;
+      width: 1%;
+    }
+
     ::selection {
       background: var(--green-200);
       color: var(--green-950);
@@ -467,6 +496,7 @@
       <video autoplay muted loop playsinline controls class="task-video">
         <source src="./static/videos/Demo_Video_25mb.mp4" type="video/mp4">
       </video>
+      <p class="demo-video-caption">Two robots with contrasting personalities (high and low extraversion) engage with a human through multimodal perception, memory, and coordinated behavior, supporting personalized and coherent multi-agent interaction.</p>
     </div>
 
     <!-- <h3 class="subsection-title">Code Snippets</h3> -->
@@ -506,27 +536,88 @@
     </div>
     <p class="code-showcase-note">*Code has been shortened for readability.</p> -->
 
-    <h3 class="subsection-title">More demos</h3>
+    <h3 class="subsection-title">Interaction Examples</h3>
     <div class="demo-video-grid">
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
           <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption">Neuroticism</p>
+        <p class="demo-video-caption"><b>Personality</b>: Two robots with contrasting neuroticism personality respond to losing a pet, showing clear differences in emotional tone. Robot-A (high neuroticism) reacts more emotionally, while Robot-B (low neuroticism) remains calm and composed.</p>
       </div>
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="with Memory">
           <source src="./static/videos/With_Memory_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption">with Memory</p>
+        <p class="demo-video-caption"><b>Memory</b>: The robots remember and reuse the user’s preferences from earlier interactions, enabling more personalized responses over time.</p>
       </div>
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="with Coordination">
           <source src="./static/videos/with_coordination_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption">with Coordination</p>
+        <p class="demo-video-caption"><b>Coordination</b>: The robots coordinate their responses by taking turns naturally, avoiding interruptions and maintaining a smooth conversation.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= Implementation Details ================= -->
+<section class="section">
+  <div class="content-wrap">
+    <h2 class="section-title">Our Approach: M2HRI</h2>
+    <div class="content has-text-justified">
+      <p>
+        Each robot in M2HRI is an independent agent with its own identity — a distinct personality, a private memory, and its own view of the world. At the same time, a shared coordinator governs how they interact as a team. The result is a system where robots feel different from each other, remember who they are talking to, and hand off the conversation naturally.
+      </p>
+    </div>
+
+    <table class="info-table">
+      <tr>
+        <td>Personality</td>
+        <td>Big Five traits injected directly into each agent's reasoning, shaping how it speaks and responds</td>
+      </tr>
+      <tr>
+        <td>Memory</td>
+        <td>Working memory for short-term coherence; semantic and episodic memory for personalization across sessions</td>
+      </tr>
+      <tr>
+        <td>Perception</td>
+        <td>Joint vision + speech processed via VLM, grounding spoken references in the physical scene</td>
+      </tr>
+      <tr>
+        <td>Planning</td>
+        <td>LLM generates sequenced policies of speech, gesture, and movement conditioned on personality and memory</td>
+      </tr>
+      <tr>
+        <td>Coordination</td>
+        <td>Centralized LLM scores each agent's suitability to respond — turn-taking as a social decision, not a timing rule</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="content-wrap">
+    <h2 class="section-title">Findings & Insights</h2>
+    <div class="content has-text-justified">
+      <p>
+        We evaluated M2HRI through a controlled user study with <b>105 participants</b> across seven experimental conditions, varying personality, memory, and coordination independently.
+      </p>
+    </div>
+
+    <table class="info-table">
+      <tr>
+        <td>Personality is perceptible</td>
+        <td>Participants reliably distinguished and recognized intended personality traits across all five Big Five dimensions, with consistency remaining high throughout each interaction</td>
+      </tr>
+      <tr>
+        <td>Memory enables personalization</td>
+        <td>Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal</td>
+      </tr>
+      <tr>
+        <td>Coordination is a social problem</td>
+        <td>Centralized coordination strongly reduced conversational overlap and improved response appropriateness — turn-taking in multi-agent HRI requires knowing who should respond, not just when to speak </td> 
+      </tr>
+    </table>
   </div>
 </section>
 
