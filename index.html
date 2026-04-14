@@ -240,23 +240,8 @@
       text-align: left;
     }
 
-    .youtube-embed {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: var(--radius-video-oval);
-      overflow: hidden;
-      background: #0a0f0c;
-      box-shadow: 0 8px 28px rgba(22, 101, 52, 0.18);
-      outline: 1px solid var(--green-200);
-    }
-
-    .youtube-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .demo-video-grid .task-video {
+      margin-top: 0;
     }
 
     .demo-video-cell {
@@ -479,8 +464,8 @@
       </video>
     </div>
 
-    <h3 class="subsection-title">Code Snippets</h3>
-    <div class="code-showcase">
+    <!-- <h3 class="subsection-title">Code Snippets</h3> -->
+    <!-- <div class="code-showcase">
       <div class="code-showcase-row">
         <button type="button" class="code-showcase-toggle" aria-expanded="false" aria-controls="code-showcase-panel-1" id="code-showcase-btn-1">
           <span class="code-showcase-label">Perception VLM</span>
@@ -514,44 +499,26 @@
         </div>
       </div>
     </div>
-    <p class="code-showcase-note">*Code has been shortened for readability.</p>
+    <p class="code-showcase-note">*Code has been shortened for readability.</p> -->
 
     <h3 class="subsection-title">More demos</h3>
     <div class="demo-video-grid">
       <div class="demo-video-cell">
-        <div class="youtube-embed">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/4NuO7G8ZRlI?rel=0"
-            title="Neuroticism"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
+        <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
+          <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
+        </video>
         <p class="demo-video-caption">Neuroticism</p>
       </div>
       <div class="demo-video-cell">
-        <div class="youtube-embed">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/si7Qg4IlsxY?rel=0"
-            title="with Memory"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
+        <video controls playsinline preload="metadata" class="task-video" title="with Memory">
+          <source src="./static/videos/With_Memory_v1.mp4" type="video/mp4">
+        </video>
         <p class="demo-video-caption">with Memory</p>
       </div>
       <div class="demo-video-cell">
-        <div class="youtube-embed">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/H9jza9vmWQg?rel=0"
-            title="with Coordination"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
+        <video controls playsinline preload="metadata" class="task-video" title="with Coordination">
+          <source src="./static/videos/with_coordination_v1.mp4" type="video/mp4">
+        </video>
         <p class="demo-video-caption">with Coordination</p>
       </div>
     </div>
