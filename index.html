@@ -33,7 +33,7 @@
       --surface: #f7fcf9;
       --text-muted: #3f6212;
 
-      --content-max: 1100px;
+      --content-max: 1400px;
       --teaser-max: 90vw;
       --teaser-gap: 18px;
       --radius-video-oval: 12px;
@@ -199,8 +199,9 @@
 
     .keyword-tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem 0.7rem;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 0.4rem;
       margin-top: 1.1rem;
       padding: 0;
       list-style: none;
@@ -208,9 +209,9 @@
 
     .keyword-tags .keyword-tag {
       display: inline-block;
-      padding: 0.3rem .9rem;
+      padding: 0.38rem 0.95rem;
       font-family: 'Google Sans', 'Noto Sans', sans-serif;
-      font-size: .9rem;
+      font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 0.02em;
       color: var(--green-900);
@@ -218,6 +219,7 @@
       border: 1px solid var(--green-200);
       border-radius: 999px;
       line-height: 1.4;
+      white-space: nowrap;
     }
 
     .task-video {
@@ -252,7 +254,7 @@
       margin-top: 0.45rem;
       font-size: 0.9rem;
       color: var(--text-muted);
-      text-align: center;
+      text-align: left;
     }
 
     .code-showcase {
@@ -439,9 +441,6 @@
         </p>
       </div>
 
-      <p class="release-note">
-        An LLM-Driven Framework for Personalized Multi-Robot Interaction
-      </p>
 
       <div class="hero-link-buttons">
         <a class="hero-link-btn" href="https://github.com/project-m2hri/m2hri" rel="noopener noreferrer" aria-label="View source code on GitHub">
@@ -460,7 +459,7 @@
 <!-- ================= ABSTRACT ================= -->
 <section class="section">
   <div class="content-wrap">
-    <div class="content has-text-justified">
+    <div class="content has-text-left">
       <p>
         Multi-robot systems hold significant promise for social environments such as homes and
         hospitals, yet existing multi-robot works treat robots as functionally identical, overlooking how
@@ -483,7 +482,7 @@
       <li class="keyword-tag">Big Five (OCEAN) Personality Modeling</li>
       <li class="keyword-tag">Three-tier Memory</li>
       <li class="keyword-tag">Multi-Agent Coordination</li>
-      <li class="keyword-tag">Open Source Code</li>
+      <li class="keyword-tag">Open Source</li>
     </ul>
   </div>
 </section>
@@ -535,36 +534,13 @@
       </div>
     </div>
     <p class="code-showcase-note">*Code has been shortened for readability.</p> -->
-
-    <h3 class="subsection-title">Interaction Examples</h3>
-    <div class="demo-video-grid">
-      <div class="demo-video-cell">
-        <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
-          <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
-        </video>
-        <p class="demo-video-caption"><b>Personality</b>: Two robots with contrasting neuroticism personality respond to losing a pet, showing clear differences in emotional tone. Robot-A (high neuroticism) reacts more emotionally, while Robot-B (low neuroticism) remains calm and composed.</p>
-      </div>
-      <div class="demo-video-cell">
-        <video controls playsinline preload="metadata" class="task-video" title="with Memory">
-          <source src="./static/videos/With_Memory_v1.mp4" type="video/mp4">
-        </video>
-        <p class="demo-video-caption"><b>Memory</b>: The robots remember and reuse the user’s preferences from earlier interactions, enabling more personalized responses over time.</p>
-      </div>
-      <div class="demo-video-cell">
-        <video controls playsinline preload="metadata" class="task-video" title="with Coordination">
-          <source src="./static/videos/with_coordination_v1.mp4" type="video/mp4">
-        </video>
-        <p class="demo-video-caption"><b>Coordination</b>: The robots coordinate their responses by taking turns naturally, avoiding interruptions and maintaining a smooth conversation.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ================= Implementation Details ================= -->
 <section class="section">
   <div class="content-wrap">
     <h2 class="section-title">Our Approach: M2HRI</h2>
-    <div class="content has-text-justified">
+    <div class="content has-text-left">
       <p>
         Each robot in M2HRI is an independent agent with its own identity — a distinct personality, a private memory, and its own view of the world. At the same time, a shared coordinator governs how they interact as a team. The result is a system where robots feel different from each other, remember who they are talking to, and hand off the conversation naturally.
       </p>
@@ -598,7 +574,7 @@
 <section class="section">
   <div class="content-wrap">
     <h2 class="section-title">Findings & Insights</h2>
-    <div class="content has-text-justified">
+    <div class="content has-text-left">
       <p>
         We evaluated M2HRI through a controlled user study with <b>105 participants</b> across seven experimental conditions, varying personality, memory, and coordination independently.
       </p>
@@ -618,6 +594,29 @@
         <td>Centralized coordination strongly reduced conversational overlap and improved response appropriateness — turn-taking in multi-agent HRI requires knowing who should respond, not just when to speak </td> 
       </tr>
     </table>
+  </div>
+
+  <h3 class="subsection-title">Interaction Examples</h3>
+    <div class="demo-video-grid">
+      <div class="demo-video-cell">
+        <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
+          <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
+        </video>
+        <p class="demo-video-caption"><b>Personality</b>: Two robots with contrasting neuroticism personality respond to losing a pet, showing clear differences in emotional tone. Robot-A (high neuroticism) reacts more emotionally, while Robot-B (low neuroticism) remains calm and composed.</p>
+      </div>
+      <div class="demo-video-cell">
+        <video controls playsinline preload="metadata" class="task-video" title="with Memory">
+          <source src="./static/videos/With_Memory_v1.mp4" type="video/mp4">
+        </video>
+        <p class="demo-video-caption"><b>Memory</b>: The robots remember and reuse the user’s preferences from earlier interactions, enabling more personalized responses over time.</p>
+      </div>
+      <div class="demo-video-cell">
+        <video controls playsinline preload="metadata" class="task-video" title="with Coordination">
+          <source src="./static/videos/with_coordination_v1.mp4" type="video/mp4">
+        </video>
+        <p class="demo-video-caption"><b>Coordination</b>: The robots coordinate their responses by taking turns naturally, avoiding interruptions and maintaining a smooth conversation.</p>
+      </div>
+    </div>
   </div>
 </section>
 
