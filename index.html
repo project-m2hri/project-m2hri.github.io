@@ -448,22 +448,19 @@
     }
 
     .info-module-number {
-      position: absolute;
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: var(--green-700);
       color: #fff;
       font-weight: 700;
-      font-size: 0.9rem;
-      display: flex;
+      font-size: 0.85rem;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      z-index: 2;
+      flex-shrink: 0;
       box-shadow: 0 2px 6px rgba(22, 101, 52, 0.25);
     }
-    .info-module-number.top-left  { top: 10px; left: 10px; }
-    .info-module-number.top-right { top: 10px; right: 10px; }
 
     .info-module.image {
       display: grid;
@@ -510,6 +507,9 @@
       margin: 0 0 0.45rem;
       border-bottom: 2px solid var(--green-500);
       padding-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .info-module-text {
@@ -721,9 +721,8 @@
 
     <div class="info-modules">
       <div class="info-module image">
-        <span class="info-module-number top-left">1</span>
         <div class="info-module-content">
-          <p class="info-module-title">            Personality is perceptible</p>
+          <p class="info-module-title"><span class="info-module-number">1</span> Personality is perceptible</p>
           <p class="info-module-text">Participants reliably distinguished and recognized intended personality traits across all five Big Five dimensions, with consistency remaining high throughout each interaction.</p>
           <p class="info-module-note">Figure (right): Personality evaluation results (RQ1). Mean Likert ratings (±1 SD) for (a) distinguishability, (b) consistency, and (c) engagement
             across five Big Five trait conditions (O = Openness, C = Conscientiousness, E = Extraversion, A = Agreeableness, N = Neuroticism). The
@@ -735,9 +734,8 @@
         </div>
       </div>
       <div class="info-module image">
-        <span class="info-module-number top-left">2</span>
         <div class="info-module-content">
-          <p class="info-module-title">Memory enables personalization</p>
+          <p class="info-module-title"><span class="info-module-number">2</span> Memory enables personalization</p>
           <p class="info-module-text">Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Memory measures: (a) recall accuracy, (b) preference awareness, (c) naturalness. Brackets indicate pairwise significance via paired-sample t-tests
@@ -749,9 +747,8 @@
         </div>
       </div>
       <div class="info-module image">
-        <span class="info-module-number top-left">3</span>
         <div class="info-module-content">
-          <p class="info-module-title">Coordination is a social problem</p>
+          <p class="info-module-title"><span class="info-module-number">3</span> Coordination is a social problem</p>
           <p class="info-module-text">Centralized coordination strongly reduced conversational overlap and improved response appropriateness — turn-taking in multi-agent HRI requires knowing who should respond, not just when to speak.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Coordination measures: (d) conversational flow, (e) response appropriateness, (f) overlap avoidance. Brackets indicate pairwise significance via paired-sample t-tests
