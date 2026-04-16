@@ -445,10 +445,6 @@
       padding: 1.15rem 1.25rem;
       box-shadow: 0 2px 12px rgba(22, 101, 52, 0.08);
       position: relative;
-      cursor: pointer;
-      display: grid;
-      grid-template-columns: 1fr;
-      transition: box-shadow 0.4s ease, grid-template-columns 0.4s ease;
     }
 
     .info-module-number {
@@ -469,68 +465,11 @@
     .info-module-number.top-left  { top: 10px; left: 10px; }
     .info-module-number.top-right { top: 10px; right: 10px; }
 
-    /* Collapsed: image & note hidden via grid + opacity */
     .info-module.image {
       display: grid;
-      grid-template-columns: 1fr 0fr;
-      gap: 0 0px;
-      align-items: center;
-    }
-    .info-module.image-left {
-      grid-template-columns: 0fr 1fr;
-    }
-
-    .info-module .info-module-img-wrap {
-      overflow: hidden;
-      opacity: 0;
-      min-width: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .info-module .info-module-note {
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
-    }
-
-    .info-module .info-module-title {
-      margin-left: 2.5rem;
-      margin-right: 2.5rem;
-      transition: margin-left 0.3s ease, margin-right 0.3s ease;
-    }
-    .info-module .info-module-text {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-      transition: padding-left 0.3s ease, padding-right 0.3s ease;
-    }
-
-    /* Expanded on hover */
-    .info-module.image:hover {
       grid-template-columns: 1fr 2fr;
       gap: 0 1.5rem;
-      box-shadow: 0 4px 20px rgba(22, 101, 52, 0.15);
-    }
-    .info-module.image-left:hover {
-      grid-template-columns: 2fr 1fr;
-    }
-
-    .info-module:hover .info-module-img-wrap {
-      opacity: 1;
-    }
-
-    .info-module:hover .info-module-note {
-      max-height: 300px;
-      opacity: 1;
-    }
-
-    .info-module:hover .info-module-title {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    .info-module:hover .info-module-text {
-      padding-left: 0;
-      padding-right: 0;
+      align-items: center;
     }
 
     .info-module-content {
@@ -553,7 +492,7 @@
     }
 
     @media (max-width: 640px) {
-      .info-module.image:hover {
+      .info-module.image {
         grid-template-columns: 1fr;
         gap: 1rem 0;
       }
