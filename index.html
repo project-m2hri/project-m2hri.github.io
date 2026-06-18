@@ -46,7 +46,7 @@
     }
 
     .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-    .content-wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 2.5rem; }
+    .content-wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 1rem; }
 
     .section-title {
       text-align: left;
@@ -445,28 +445,92 @@
       padding: 1.15rem 1.25rem;
       box-shadow: 0 2px 12px rgba(22, 101, 52, 0.08);
       position: relative;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr;
+      transition: box-shadow 0.4s ease, grid-template-columns 0.4s ease;
     }
 
     .info-module-number {
-      width: 28px;
-      height: 28px;
+      position: absolute;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: var(--green-700);
       color: #fff;
       font-weight: 700;
-      font-size: 0.85rem;
-      display: inline-flex;
+      font-size: 0.9rem;
+      display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      z-index: 2;
       box-shadow: 0 2px 6px rgba(22, 101, 52, 0.25);
     }
+    .info-module-number.top-left  { top: 10px; left: 10px; }
+    .info-module-number.top-right { top: 10px; right: 10px; }
 
+    /* Collapsed: image & note hidden via grid + opacity */
     .info-module.image {
       display: grid;
+      grid-template-columns: 1fr 0fr;
+      gap: 0 0px;
+      align-items: center;
+    }
+    .info-module.image-left {
+      grid-template-columns: 0fr 1fr;
+    }
+
+    .info-module .info-module-img-wrap {
+      overflow: hidden;
+      opacity: 0;
+      min-width: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .info-module .info-module-note {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    .info-module .info-module-title {
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
+      transition: margin-left 0.3s ease, margin-right 0.3s ease;
+    }
+    .info-module .info-module-text {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      transition: padding-left 0.3s ease, padding-right 0.3s ease;
+    }
+
+    /* Expanded on hover */
+    .info-module.image:hover {
       grid-template-columns: 1fr 2fr;
       gap: 0 1.5rem;
-      align-items: center;
+      box-shadow: 0 4px 20px rgba(22, 101, 52, 0.15);
+    }
+    .info-module.image-left:hover {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .info-module:hover .info-module-img-wrap {
+      opacity: 1;
+    }
+
+    .info-module:hover .info-module-note {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .info-module:hover .info-module-title {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .info-module:hover .info-module-text {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .info-module-content {
@@ -489,7 +553,7 @@
     }
 
     @media (max-width: 640px) {
-      .info-module.image {
+      .info-module.image:hover {
         grid-template-columns: 1fr;
         gap: 1rem 0;
       }
@@ -507,9 +571,6 @@
       margin: 0 0 0.45rem;
       border-bottom: 2px solid var(--green-500);
       padding-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .info-module-text {
@@ -565,7 +626,7 @@
           <i class="fab fa-github" aria-hidden="true"></i>
           <span>Code</span>
         </a>
-        <a class="hero-link-btn" href="https://arxiv.org/abs/2604.11975" rel="noopener noreferrer" aria-label="Read paper on arXiv">
+        <a class="hero-link-btn" href="#" rel="noopener noreferrer" aria-label="Read paper on arXiv">
           <i class="fas fa-file-pdf" aria-hidden="true"></i>
           <span>Paper</span>
         </a>
@@ -721,8 +782,9 @@
 
     <div class="info-modules">
       <div class="info-module image">
+        <span class="info-module-number top-left">1</span>
         <div class="info-module-content">
-          <p class="info-module-title"><span class="info-module-number">1</span> Personality is perceptible</p>
+          <p class="info-module-title">            Personality is perceptible</p>
           <p class="info-module-text">Participants reliably distinguished and recognized intended personality traits across all five Big Five dimensions, with consistency remaining high throughout each interaction.</p>
           <p class="info-module-note">Figure (right): Personality evaluation results (RQ1). Mean Likert ratings (±1 SD) for (a) distinguishability, (b) consistency, and (c) engagement
             across five Big Five trait conditions (O = Openness, C = Conscientiousness, E = Extraversion, A = Agreeableness, N = Neuroticism). The
@@ -734,8 +796,9 @@
         </div>
       </div>
       <div class="info-module image">
+        <span class="info-module-number top-left">2</span>
         <div class="info-module-content">
-          <p class="info-module-title"><span class="info-module-number">2</span> Memory enables personalization</p>
+          <p class="info-module-title">Memory enables personalization</p>
           <p class="info-module-text">Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Memory measures: (a) recall accuracy, (b) preference awareness, (c) naturalness. Brackets indicate pairwise significance via paired-sample t-tests
@@ -747,8 +810,9 @@
         </div>
       </div>
       <div class="info-module image">
+        <span class="info-module-number top-left">3</span>
         <div class="info-module-content">
-          <p class="info-module-title"><span class="info-module-number">3</span> Coordination is a social problem</p>
+          <p class="info-module-title">Coordination is a social problem</p>
           <p class="info-module-text">Centralized coordination strongly reduced conversational overlap and improved response appropriateness — turn-taking in multi-agent HRI requires knowing who should respond, not just when to speak.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Coordination measures: (d) conversational flow, (e) response appropriateness, (f) overlap avoidance. Brackets indicate pairwise significance via paired-sample t-tests
@@ -761,8 +825,8 @@
     </div>
   </div>
 
-  <h3 class="subsection-title" style="padding: 0 2.5rem;">Interaction Examples</h3>
-  <div class="demo-video-grid">
+  <h3 class="subsection-title">Interaction Examples</h3>
+    <div class="demo-video-grid">
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
           <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
@@ -781,6 +845,7 @@
         </video>
         <p class="demo-video-caption"><b>Coordination</b>: The robots coordinate their responses by taking turns naturally, avoiding interruptions and maintaining a smooth conversation.</p>
       </div>
+    </div>
   </div>
 </section>
 
