@@ -640,19 +640,18 @@
   <div class="content-wrap">
     <div class="content has-text-left">
       <p>
-        Multi-robot systems hold significant promise for social environments such as homes and
-        hospitals, yet existing multi-robot works treat robots as functionally identical, overlooking how
-        robots individual identity shape user perception and how coordination shapes multi-robot
-        behavior when such individuality is present. To address this, we intro- duce M2HRI, a
-        multimodal multi-agent framework built on large language models that equips each robot with
-        distinct personality and long-term memory, alongside a coordination mechanism conditioned
-        on these differences. In a controlled user study (n = 105) in a multi-agent human–robot
-        interaction (HRI) scenario, we find that LLM-driven personality traits are significantly
-        distinguishable and enhance interaction quality, long-term memory improves personalization
-        and preference awareness, and centralized coordination significantly reduces overlap while
-        improving overall interaction quality. Together, these results demonstrate that both agent
-        individuality and structured coordination are essential for coherent and socially appropriate
-        multi-agent HRI.
+        Multi-robot systems hold significant promise for social environments such as homes and hospitals, yet
+        existing multi-robot systems often treat robots as functionally interchangeable, overlooking how distinct
+        agent identities shape user perception and how such individuality changes the coordination requirements
+        of multi-robot interaction. To address this, we introduce M2HRI, a multimodal multi-agent framework that
+        models each robot as an identity-bearing agent through personality and long-term memory, together with
+        a contextualized coordination mechanism that regulates agent participation. In a controlled user study (n
+        = 105) in a multi-agent human–robot interaction (HRI) scenario, we found that most personality contrasts
+        were distinguishable and consistently expressed. Long-term memory improved preference awareness
+        and interaction naturalness, while contextualized coordination improved conversational flow, response
+        appropriateness, and overlap avoidance. Together, these findings show that agent individuality and
+        contextualized participation coordination play complementary roles in supporting coherent and socially
+        appropriate multi-agent HRI.
       </p>
     </div>
 
@@ -674,7 +673,8 @@
       <video autoplay muted loop playsinline controls class="task-video">
         <source src="./static/videos/Demo_Video_25mb.mp4" type="video/mp4">
       </video>
-      <p class="demo-video-caption">Two robots with contrasting personalities (high and low extraversion) engage with a human through multimodal perception, memory, and coordinated behavior, supporting personalized and coherent multi-agent interaction.</p>
+      <p class="demo-video-caption">A human user interacts with two NAO robots, each with distinct personality, memory, and perception,
+        enabling personalized and context-aware embodied interaction.</p>
     </div>
 
     <!-- <h3 class="subsection-title">Code Snippets</h3> -->
@@ -721,7 +721,10 @@
     <h2 class="section-title">Our Approach: M2HRI</h2>
     <div class="content has-text-left">
       <p>
-        Each robot in M2HRI is an independent agent with its own identity — a distinct personality, a private memory, and its own view of the world. At the same time, a shared coordinator governs how they interact as a team. The result is a system where robots feel different from each other, remember who they are talking to, and hand off the conversation naturally.
+        M2HRI is a multimodal multi-agent HRI framework that supports interaction with a team of identity-bearing
+        robot agents. Each robot maintains its own personality and long-term memory, while a contextualized
+        coordinator regulates which agent should participate based on the interaction context and each agent’s
+        characteristics. This design preserves agent individuality while producing coherent group behavior.
       </p>
     </div>
 
@@ -730,19 +733,19 @@
         <table class="info-table">
           <tr>
             <td>Personality</td>
-            <td>Big Five traits injected directly into each agent's reasoning, shaping how it speaks and responds</td>
+            <td>Big Five traits are integrated into each agent’s reasoning process, shaping how the robot responds, expresses itself, and maintains a consistent identity.</td>
           </tr>
           <tr>
             <td>Memory</td>
-            <td>Working memory for short-term coherence; semantic and episodic memory for personalization across sessions</td>
+            <td>Each agent maintains working memory for short-term context and semantic and episodic memory for user-specific knowledge and prior interaction history.</td>
           </tr>
           <tr>
             <td>Perception</td>
-            <td>Joint vision + speech processed via VLM, grounding spoken references in the physical scene</td>
+            <td>Speech and visual observations are jointly processed to ground user input in the physical scene and support context-aware reasoning.</td>
           </tr>
           <tr>
             <td>Planning</td>
-            <td>LLM generates sequenced policies of speech, gesture, and movement conditioned on personality and memory</td>
+            <td>An LLM-based planner generates sequenced speech, gesture, and movement policies conditioned on perception, personality, memory, and available robot actions.</td>
           </tr>
         </table>
       </div>
@@ -763,7 +766,7 @@
         <table class="info-table">
           <tr>
             <td>Coordination</td>
-            <td>Centralized LLM scores each agent's suitability to respond — turn-taking as a social decision, not a timing rule</td>
+            <td>A contextualized coordinator scores each agent’s participation suitability using shared context, local observations, and agent identity, selecting which robot should respond.</td>
           </tr>
         </table>
       </div>
@@ -776,7 +779,7 @@
     <h2 class="section-title">Findings & Insights</h2>
     <div class="content has-text-left">
       <p>
-        We evaluated M2HRI through a controlled user study with <b>105 participants</b> across seven experimental conditions, varying personality, memory, and coordination independently.
+        We evaluated M2HRI through a controlled user study with 105 participants across seven experimental blocks, varying personality, memory, and coordination.
       </p>
     </div>
 
@@ -784,8 +787,8 @@
       <div class="info-module image">
         <span class="info-module-number top-left">1</span>
         <div class="info-module-content">
-          <p class="info-module-title">            Personality is perceptible</p>
-          <p class="info-module-text">Participants reliably distinguished and recognized intended personality traits across all five Big Five dimensions, with consistency remaining high throughout each interaction.</p>
+          <p class="info-module-title">            Personality supports agent individuality</p>
+          <p class="info-module-text">Participants generally distinguished between robot personalities, recognized intended traits, and perceived personality expression as consistent across interactions. The effect varied by trait, with some traits more behaviorally salient than others.</p>
           <p class="info-module-note">Figure (right): Personality evaluation results (RQ1). Mean Likert ratings (±1 SD) for (a) distinguishability, (b) consistency, and (c) engagement
             across five Big Five trait conditions (O = Openness, C = Conscientiousness, E = Extraversion, A = Agreeableness, N = Neuroticism). The
             dashed line indicates the neutral midpoint (μ0 = 3.0); stars denote significance against μ0 via one-sample t-tests. (d) Personality Trait
@@ -799,7 +802,7 @@
         <span class="info-module-number top-left">2</span>
         <div class="info-module-content">
           <p class="info-module-title">Memory enables personalization</p>
-          <p class="info-module-text">Long-term memory drove significant improvements in recall accuracy and preference awareness; without it, agents were coherent but impersonal.</p>
+          <p class="info-module-text">Long-term memory improved recall accuracy, preference awareness, and perceived personalization. Without long-term memory, agents remained locally coherent but impersonal.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Memory measures: (a) recall accuracy, (b) preference awareness, (c) naturalness. Brackets indicate pairwise significance via paired-sample t-tests
             with ** p < .01, *** p < .001.
@@ -812,8 +815,8 @@
       <div class="info-module image">
         <span class="info-module-number top-left">3</span>
         <div class="info-module-content">
-          <p class="info-module-title">Coordination is a social problem</p>
-          <p class="info-module-text">Centralized coordination strongly reduced conversational overlap and improved response appropriateness — turn-taking in multi-agent HRI requires knowing who should respond, not just when to speak.</p>
+          <p class="info-module-title">Coordination structures multi-agent interaction</p>
+          <p class="info-module-text">Contextualized coordination improved conversational flow, response appropriateness, and overlap avoidance. These results show that multi-agent turn-taking requires deciding which agent should respond, not only when a response should occur.</p>
           <p class="info-module-note">Figure (right): Paired bar charts compare with- and without-condition means (±1 SD)
             across three measures each. Coordination measures: (d) conversational flow, (e) response appropriateness, (f) overlap avoidance. Brackets indicate pairwise significance via paired-sample t-tests
             with ** p < .01, *** p < .001.</p>
@@ -831,19 +834,19 @@
         <video controls playsinline preload="metadata" class="task-video" title="Neuroticism">
           <source src="./static/videos/Neuroticism_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption"><b>Personality</b>: Two robots with contrasting neuroticism personality respond to losing a pet, showing clear differences in emotional tone. Robot-A (high neuroticism) reacts more emotionally, while Robot-B (low neuroticism) remains calm and composed.</p>
+        <p class="demo-video-caption"><b>Personality</b>: Two robots with contrasting personality configurations respond differently to the same situation, making agent identity perceptible through language, tone, and behavior.</p>
       </div>
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="with Memory">
           <source src="./static/videos/With_Memory_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption"><b>Memory</b>: The robots remember and reuse the user’s preferences from earlier interactions, enabling more personalized responses over time.</p>
+        <p class="demo-video-caption"><b>Memory</b>: Robots recall and reuse user-specific preferences from prior interactions, supporting more personalized and context-aware responses.</p>
       </div>
       <div class="demo-video-cell">
         <video controls playsinline preload="metadata" class="task-video" title="with Coordination">
           <source src="./static/videos/with_coordination_v1.mp4" type="video/mp4">
         </video>
-        <p class="demo-video-caption"><b>Coordination</b>: The robots coordinate their responses by taking turns naturally, avoiding interruptions and maintaining a smooth conversation.</p>
+        <p class="demo-video-caption"><b>Coordination</b>: Robots regulate participation so the contextually appropriate agent responds, reducing interruptions and maintaining smoother multi-agent dialogue.</p>
       </div>
     </div>
   </div>
